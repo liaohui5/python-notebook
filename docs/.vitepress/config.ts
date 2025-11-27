@@ -8,8 +8,12 @@ const nav = [
     link: "/base/",
   },
   {
-    text: "面向对象",
-    link: "/oop/",
+    text: "项目实战",
+    link: "/practice/",
+  },
+  {
+    text: "GUI 编程",
+    link: "/gui/",
   },
 ];
 

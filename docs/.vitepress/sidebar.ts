@@ -3,7 +3,8 @@ import fs from "node:fs";
 const sidebar = sidebarGenerator([
   // 目录名称
   "/base/",
-  "/oop/",
+  "/practice/",
+  "/gui/",
 ]);
 export default sidebar;
 
