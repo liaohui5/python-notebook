@@ -1,12 +1,31 @@
 import fs from "node:fs";
 
-const sidebar = sidebarGenerator([
-  // 目录名称
-  "/base/",
-  "/practice/",
-  "/gui/",
-]);
-export default sidebar;
+// 根据 nav 生成侧边栏
+const sidebars: Record<string, any> = {};
+export function genSidebarByNavs(navs: Array<any>) {
+  navs
+    .filter((nav) => nav.isAutoGenSidebar)
+    .forEach((nav) => {
+      if (Array.isArray(nav.items)) {
+        // items
+        genSidebarByNavs(nav.items);
+        return;
+      }
+
+      // link
+      sidebars[nav.link] = autoGenSidebars(nav.link);
+    });
+  return sidebars;
+}
+
+// 根据传入的路径数组生成侧边栏配置
+export function sidebarGenerator(sidebarPaths: Array<string> = []) {
+  const sidebars = {};
+  for (const path of sidebarPaths) {
+    sidebars[path] = autoGenSidebars(path);
+  }
+  return sidebars;
+}
 
 // 根据文件名生成序号(用于排序)
 function getOrderBy(fileName: string) {
@@ -15,15 +34,6 @@ function getOrderBy(fileName: string) {
     return 0;
   }
   return order;
-}
-
-// 根据传入的路径数组生成侧边栏配置
-function sidebarGenerator(sidebarPaths: Array<string> = []) {
-  const sidebars = {};
-  for (const path of sidebarPaths) {
-    sidebars[path] = autoGenSidebars(path);
-  }
-  return sidebars;
 }
 
 // 根据文件自动生成侧边栏(这个不是vite插件不会实时监听文件变化然后重启)

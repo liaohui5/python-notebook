@@ -1,21 +1,25 @@
 import markdownItCheckBox from "markdown-it-todo-lists";
 import { defineConfig } from "vitepress";
-import sidebar from "./sidebar";
+import { genSidebarByNavs } from "./sidebar";
 
 const nav = [
   {
     text: "基础语法",
     link: "/base/",
+    isAutoGenSidebar: true,
   },
   {
-    text: "项目实战",
-    link: "/practice/",
+    text: "工具类库",
+    link: "/libs/",
+    isAutoGenSidebar: true,
   },
   {
     text: "GUI 编程",
     link: "/gui/",
+    isAutoGenSidebar: true,
   },
 ];
+const sidebar = genSidebarByNavs(nav);
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -34,8 +38,8 @@ export default defineConfig({
 
   themeConfig: {
     nav,
-    logo: "/logo.svg",
     sidebar,
+    logo: "/logo.svg",
     outline: "deep",
 
     search: {
