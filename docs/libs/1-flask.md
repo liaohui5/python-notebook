@@ -203,6 +203,22 @@ def get_url_path(dynamic_path: str):
     }
 
 
+@app.get("/query")
+def get_form() -> dict[str, str]:
+    # curl http://localhost:3000?page=1&limit=10
+    # 获取所有 query 参数, 返回一个字典 { page: 1, age: 2 }
+    return request.args
+
+@app.get("/query")
+def get_form() -> dict[str, str]:
+    # curl http://localhost:3000?page=1
+    # 获取 query 某一个参数并设置默认值
+    page = request.args.get("page", 1)
+    limit = request.args.get("limit", 10)
+    return { "page": page, "limit": 10 }
+
+
+
 @app.post("/form1")
 def get_form() -> dict[str, str]:
     # 注意请求格式为: Content-Type: application/x-www-form-urlencoded
@@ -544,6 +560,8 @@ if __name__ == "__main__":
 2. 自定义中间件: auth
 
 ### CORS 允许跨域
+
+- 安装: `uv add flask-cors`
 
 ```python
 from flask import Flask, jsonify
