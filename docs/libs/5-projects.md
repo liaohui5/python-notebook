@@ -1,10 +1,11 @@
 ## 介绍
 
-学习了不练习, 过几天就会忘记, 所以就有了这个练手项目
+学习了不练习, 过几天就会忘记, 所以就有了这个 flask 练手项目
 
 ## 源码仓库
 
-https://github.com/liaohui5/flask-curd-demo
+- [flask-curd-demo](https://github.com/liaohui5/flask-curd-demo)
+- [fastapi-curd-demo](https://github.com/liaohui5/fastapi-curd-demo)
 
 ## 主要功能
 

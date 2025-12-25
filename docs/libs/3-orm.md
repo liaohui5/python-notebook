@@ -1452,7 +1452,9 @@ uv run alembic init -t generic ./migrations
 sqlalchemy.url = postgres+psycopg2://root:root123456@localhost:5432/demo
 ```
 
-- 5.1 修改 `migration/env.py`
+- 5.2 修改 `migration/env.py`
+
+推荐使用这种方式, 使用代码的方式覆盖 .ini 配置文件的方式
 
 ```python
 # 1.在文件最上方导入语句的后面假如这些代码
