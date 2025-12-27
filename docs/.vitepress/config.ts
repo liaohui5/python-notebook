@@ -9,6 +9,11 @@ const nav = [
     isAutoGenSidebar: true,
   },
   {
+    text: "标准库",
+    link: "https://docs.python.org/zh-cn/3.12/library/index.html",
+    isAutoGenSidebar: false,
+  },
+  {
     text: "工具类库",
     link: "/libs/",
     isAutoGenSidebar: true,
