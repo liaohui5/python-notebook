@@ -1,5 +1,5 @@
 {
-  "name": "rust-notebook",
+  "name": "python-notebook",
   "version": "1.0.0",
   "description": "notebook of study python",
   "license": "MIT",
@@ -11,15 +11,15 @@
     "docs:preview": "vitepress preview docs"
   },
   "dependencies": {
-    "vite": "^8.0.3",
-    "vue": "^3.5.31"
+    "vite": "^8.0.11",
+    "vue": "^3.5.34"
   },
   "devDependencies": {
     "@nolebase/vitepress-plugin-enhanced-readabilities": "^2.18.2",
-    "@types/node": "^24.12.0",
+    "@types/node": "^24.12.2",
     "markdown-it-todo-lists": "^0.1.8",
     "sass": "1.78.0",
-    "vitepress": "2.0.0-alpha.15"
+    "vitepress": "2.0.0-alpha.17"
   },
   "packageManager": "pnpm@10.22.0"
 }
