@@ -37,7 +37,7 @@ async def index():
 
 服务默认启动在 8000 端口, `/docs` 是自动生成的 [Swagger](https://swagger.io/) 接口文档, `/redoc` 是自动生成的 [redoc](https://github.com/Redocly/redoc) 文档
 
-![fastapi-run](https://raw.githubusercontent.com/liaohui5/images/main/images/20251222233402144.png)
+![fastapi-run](https://notebook-imgbed.s3.bitiful.net/notebook-imgbed/2026_06_18_59c2f087f78e73a2a5242242b4c1dbde.jpg)
 
 ## 请求
 
